@@ -282,7 +282,7 @@ int playlist_SaveArt( vlc_object_t *obj, input_item_t *p_item,
 
     /* Check if we already dumped it */
     struct stat s;
-    if( !vlc_stat( psz_filename, &s ) )
+    if( !vlc_stat( psz_filename, &s ) && false) // Force redump artwork (disables cache)
     {
         input_item_SetArtURL( p_item, psz_uri );
         free( psz_filename );
